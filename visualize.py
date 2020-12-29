@@ -25,3 +25,4 @@ def visualize(fn, x, y, size, pixels):
     ax.get_yaxis().set_visible(False)
     ax.imshow(canvas);
 
+# Some more functions below...
