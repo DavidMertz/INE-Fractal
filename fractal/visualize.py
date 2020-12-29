@@ -7,8 +7,8 @@ def make_canvas(fn, x, y, size, pixels, kws={}):
     """Create a 'canvas' based on an arbitrary function fn:ℂ🠖ℕ
 
     fn:     function visualized
-    x:      lower-left (smallest) real coordinate
-    y:      lower-left (smallest) imaginary coordinate
+    x:      real coordinate of center
+    y:      imaginary coordinate of center
     size:   numeric range of value to plot in each coord
     pixels: size of generated graph in pixels (square)
 
@@ -27,7 +27,7 @@ def make_canvas(fn, x, y, size, pixels, kws={}):
 
 def visualize(canvas):
     "Visualize an arbitrary canvas of 8-bit unsigned ints"
-    fig, ax = plt.subplots(figsize=(8, 8))
+    fig, ax = plt.subplots(figsize=(7, 7))
     ax.get_xaxis().set_visible(False)
     ax.get_yaxis().set_visible(False)
     ax.imshow(canvas)
