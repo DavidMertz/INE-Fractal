@@ -5,3 +5,5 @@ This library is for demonstration purposes, intended to be useful for INE course
 
 * Unit Testing for Python
 * GitHub and Version Control
+
+This demonstrates various versions of the Fractal library.
