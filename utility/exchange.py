@@ -39,15 +39,15 @@ def make_archive(canvas, comment="Archived Fractal"):
 
 def same_image(archive1, archive2):
     # Compare on only hashes if they exist in both archives
-    # Use .get to substitute distinct values where missing
-    if archive1.get('hash_', "A") == archive2.get('hash', "B"):
-        return True
-    # If we need to compare NumPy canvases, must use .all()
-    elif (archive1.canvas == archive2.canvas).all():
-        return True
+    # Use getattr() to substitute distinct values where missing
+    if not getattr(archive1, 'hash_', None) and not getattr(archive2, 'hash', None):
+        # If we need to compare NumPy canvases, must use .all()
+        return (archive1.canvas == archive2.canvas).all()
+    else:
+        return archive1.hash_ == archive2.hash_
 
 
-def write_archive(canvas, comment=None, name=None):
+def write_archive(canvas, name=None, comment=None):
     archive = Fractal(canvas=canvas,
                       timestamp=datetime.now().isoformat(),
                       uuid=uuid4(),
@@ -59,5 +59,5 @@ def write_archive(canvas, comment=None, name=None):
 
 
 def read_archive(name):
-    with GzipFile(name) as gz:
+    with GzipFile(f"{name}.pkl.gz") as gz:
         return loads(gz.read())
