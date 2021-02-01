@@ -6,7 +6,7 @@ def polymandel(z0:complex,
                p4:float=0,
                p5:float=0,
                p6:float=0,
-               orbits:int=255) -> int:
+               orbits:int=256) -> int:
     """Find the escape orbit of points under Mandelbrot-like iteration
 
     z0:        Initial point, much as in Mandelbrot
