@@ -40,7 +40,7 @@ def make_archive(canvas, comment="Archived Fractal"):
 def same_image(archive1, archive2):
     # Compare on only hashes if they exist in both archives
     # Use getattr() to substitute distinct values where missing
-    if not getattr(archive1, 'hash_', None) and not getattr(archive2, 'hash', None):
+    if not getattr(archive1, 'hash_', None) and not getattr(archive2, 'hash_', None):
         # If we need to compare NumPy canvases, must use .all()
         return (archive1.canvas == archive2.canvas).all()
     else:
