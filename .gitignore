@@ -3,6 +3,7 @@
 tmp-*
 *.enc
 *.png
+*.pkl.gz
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

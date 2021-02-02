@@ -59,5 +59,7 @@ def write_archive(canvas, name=None, comment=None):
 
 
 def read_archive(name):
-    with GzipFile(f"{name}.pkl.gz") as gz:
+    if not name.endswith('.pkl.gz'):
+        name = f"{name}.pkl.gz"
+    with GzipFile(name) as gz:
         return loads(gz.read())
