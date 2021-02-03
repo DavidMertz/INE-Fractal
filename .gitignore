@@ -1,6 +1,7 @@
 # Temporary data
 **/tmp/*
 tmp-*
+tmp_*.py
 *.enc
 *.png
 *.pkl.gz
